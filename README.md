@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Concept
 
-## Getting Started
+A Solana wallet login that allows serverside authentication and authorization through the T3 stack (Nextjs, next-auth, trpc, prisma) .  We sign a message which drops a cookie through next-auth (based on this repo: https://github.com/pcibraro/solana-login ).  I have added a Prisma db lay-out where you can assign ROLES to different  wallet addresses and allow CRUD operations based on those roles through TRPC middleware.
 
-First, run the development server:
+## Get started
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1) npm i
+2) create .env in the source folder with 2 variables:
+     DATABASE_URL='mysql://...'  => any sql database should work, I used railway.
+     NEXTAUTH_SECRET='...'  => generate a secret through this terminal command: openssl rand -base64 32
+                            ( https://next-auth.js.org/deployment )
+3) npx prisma db push
+4) npm run dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you want to deploy you have to change  "const url" from "localhost:3000" to your "deployment domain" in "src/pages/_app.tsx".
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Functionality
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Login/logout lay-out. In server/router.ts we find the auth logic and example CRUD operations.  New users get added automatically as USER in the database.  If you change their role to ADMIN, they will be able to access the Admin content.  There are 4 CRUD operations for a ContactForm table, limited by middleware in server/router.ts.  Everybody (USER & ADMIN) can INSERT a message, only an ADMIN can READ, UPDATE & DELETE
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
