@@ -9,8 +9,9 @@ A Solana wallet login that allows serverside authentication and authorization th
 
 1) npm i
 2) create .env in the source folder with 2 variables:
-     DATABASE_URL='mysql://...'  => any sql database should work, I used railway.
-     NEXTAUTH_SECRET='...'  => generate a secret through this terminal command: openssl rand -base64 32
+     a) DATABASE_URL='mysql://...'  => any sql database should work, I used railway.
+     
+     b) NEXTAUTH_SECRET='...'  => generate a secret through this terminal command: openssl rand -base64 32
                             ( https://next-auth.js.org/deployment )
 3) npx prisma db push
 4) npm run dev
