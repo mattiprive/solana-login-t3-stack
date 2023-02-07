@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+
+}
+model ContactForm {
+  id      Int      @id @default(autoincrement())
+  title   String
+  email   String?
+  checked Boolean? @default(false)
+  createdAt DateTime? @default(now())
+}
+model User {
+    id      Int      @id @default(autoincrement())
+    publickey String     @unique
+    @@index(publickey)
+    role     Role @default(USER)
+    createdAt DateTime? @default(now())
+}
+enum Role {
+  USER
+  ADMIN
+  AGENT
+}

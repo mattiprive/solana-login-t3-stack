@@ -1,0 +1,75 @@
+{
+    "name": "bonsailab",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "watch": "TAILWIND_MODE='watch' npm run dev",
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint --fix .",
+        "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    },
+    "dependencies": {
+        "@prisma/client": "4.3.1",
+        "@project-serum/anchor": "^0.25.0",
+        "@solana/wallet-adapter-base": "^0.9.17",
+        "@solana/wallet-adapter-react": "^0.15.19",
+        "@solana/wallet-adapter-react-ui": "^0.9.17",
+        "@solana/wallet-adapter-wallets": "^0.18.10",
+        "@solana/web3.js": "^1.62.1",
+        "@trpc/client": "9.27.2",
+        "@trpc/next": "9.27.2",
+        "@trpc/react": "9.27.2",
+        "@trpc/server": "9.27.2",
+        "bs58": "5.0.0",
+        "cookie": "^0.4.1",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "decode-uri-component": "^0.4.1",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.31.8",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "json5": "^2.2.3",
+        "next": "^12.2.5",
+        "next-auth": "4.11.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "superjson": "^1.10.0",
+        "tweetnacl": "^1.0.3",
+        "tweetnacl-util": "^0.15.1",
+        "util": "^0.12.4",
+        "zod": "^3.19.1"
+    },
+    "devDependencies": {
+        "@types/cookie": "^0.5.1",
+        "@types/cors": "^2.8.12",
+        "@types/node": "18.7.16",
+        "@types/react": "18.0.21",
+        "@types/react-dom": "18.0.6",
+        "@typescript-eslint/eslint-plugin": "^5.37.0",
+        "autoprefixer": "^10.4.8",
+        "eslint": "^8.23.1",
+        "eslint-config-next": "12.3.0",
+        "eslint-plugin-jsx-a11y": "^6.6.1",
+        "eslint-plugin-simple-import-sort": "^8.0.0",
+        "postcss": "^8.4.16",
+        "prettier": "^2.7.1",
+        "prisma": "4.3.1",
+        "tailwindcss": "^3.1.8",
+        "typescript": "4.8.3",
+        "undefined": "^0.1.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "airbnb"
+        ]
+    },
+    "lint-staged": {
+        "./**/*.{js,jsx,ts,tsx}": [
+            "eslint --fix"
+        ]
+    }
+}
