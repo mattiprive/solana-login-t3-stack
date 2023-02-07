@@ -1,3 +1,6 @@
+![github banner solana login](https://user-images.githubusercontent.com/112099041/217245430-e53ea52c-0d96-415f-8608-448565a637ad.png)
+
+
 ## Concept
 
 A Solana wallet login that allows serverside authentication and authorization through the T3 stack (Nextjs, next-auth, trpc, prisma) .  We sign a message which drops a cookie through next-auth (based on this repo: https://github.com/pcibraro/solana-login ).  I have added a Prisma db lay-out where you can assign ROLES to different  wallet addresses and allow CRUD operations based on those roles through TRPC middleware.
