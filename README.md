@@ -27,3 +27,4 @@ Login/logout lay-out. In server/router.ts we find the auth logic and example CRU
 2) Option to sign a transaction for Ledger support.
 3) Typescript typing could be more strict, I am a beginner in this.
 4) Abstract login/logout functionality to context/utils.
+5) Update to TRPC 10
