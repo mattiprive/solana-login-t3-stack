@@ -21,5 +21,9 @@ If you want to deploy you have to change  "const url" from "localhost:3000" to y
 
 Login/logout lay-out. In server/router.ts we find the auth logic and example CRUD operations.  New users get added automatically as USER in the database.  If you change their role to ADMIN, they will be able to access the Admin content.  There are 4 CRUD operations for a ContactForm table, limited by middleware in server/router.ts.  Everybody (USER & ADMIN) can INSERT a message, only an ADMIN can READ, UPDATE & DELETE
 
-
-
+## Functionality
+Todo: 
+1) Security audit.
+2) Option to sign a transaction for Ledger support.
+3) Typescript typing could be more strict, I am a beginner in this.
+4) Abstract login/logout functionality to context/utils.
