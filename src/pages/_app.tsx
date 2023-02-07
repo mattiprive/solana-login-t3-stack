@@ -20,9 +20,9 @@ function App({ Component, pageProps }: AppProps<{ session: Session }>) {
 export default withTRPC<ServerRouter>({
     config({ ctx }) {
         //Switch when deploying.
-        const url = 'https://solana-login.vercel.app//api/trpc';
+        // EXAMPLE: const url = 'https://solana-login.vercel.app//api/trpc';
         // const url = 'https://YOURDOMAIN/api/trpc';
-        // const url = 'http://localhost:3000/api/trpc';
+        const url = 'http://localhost:3000/api/trpc';
 
         return { url };
     }
